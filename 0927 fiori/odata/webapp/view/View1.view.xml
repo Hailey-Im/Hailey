@@ -1,7 +1,7 @@
 <mvc:View controllerName="sap.sync.odata.controller.View1"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns="sap.m">
-    <Page id="page" title="{i18n>title}">
+    <Page id="page" title="판매오더목록">
         <content>
             <HBox>
                 <Input id="soId" value="{view>/salesOrderNum}"/>
@@ -21,7 +21,9 @@
         <headerToolbar>
             <OverflowToolbar>
                 <content>
-                    <Title text="Products" level="H2"/>
+                    <Title text="목록" level="H2"/>
+                    <ToolbarSpacer/>
+                    <Button icon="sap-icon://refresh" text="새로고침" press="onRefresh"/>
                 </content>
             </OverflowToolbar>
         </headerToolbar>
