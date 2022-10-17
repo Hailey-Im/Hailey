@@ -1,0 +1,83 @@
+<mvc:View controllerName="sdorderlist.controller.orderlist"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="주문 현황" titleLevel="H1" showFooter="false" >
+
+       <content>
+            <HBox id="box1">
+                <Label id="ordernum" text="주문번호" labelFor="soId" />
+                <Input id="soId" value="{view>/salesOrderNum}"
+                       placeholder="주문 번호 입력"/>
+                <Input id="soMemo" value="{view>/salesOrderMemo}"/>
+                <Button text="저장" press="onCreate"/>
+                <Button text="변경" press="onUpdate"/>
+                <Button text="수정모드" press="onPressEdit"/>
+                <Button text="삭제모드" press="onPressDel"/>
+            </HBox>
+            <Table id="table"
+                inset="false"
+                items="{
+                    path: '/SalesOrderSet'
+                }"
+                mode="Delete" delete ="onDelete"
+                selectionChange="onPressItem">
+        <headerToolbar>
+            <OverflowToolbar>
+                <content>
+                    <Title text="목록" level="H2"/>
+                    <ToolbarSpacer/>
+                    <Button icon="sap-icon://refresh" text="새로고침" press="onRefresh"/>
+                </content>
+            </OverflowToolbar>
+        </headerToolbar>
+        <columns>
+            <Column>
+                <Text text="판매오더 번호" />
+            </Column>
+            <Column>
+                <Text text="주문유형" />
+            </Column>
+            <Column>
+                <Text text="수정일" />
+            </Column>
+            <Column>
+                <Text text="품목번호" />
+            </Column>
+            <Column>
+                <Text text="수정시간" />
+            </Column>
+            <Column>
+                <Text text="담당자" />
+            </Column>
+              <Column>
+                <Text text="상태" />
+            </Column>
+
+        </columns>
+        <items>
+            <ColumnListItem vAlign="Middle">
+               <cells>
+                    <ObjectIdentifier
+                        title="{Ornum}"/>
+                    <Text
+                        text="{Ortype}" />
+                    <Text
+                        text="{Custna}" />
+                    <Text
+                        text="{Custno}" />
+                    <!-- <Text
+                        text="{Erdat}" /> -->
+                    <Text text="{ path: 'Ordat', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'yyyy-MM-dd', UTC: true } }" />
+                    <Text
+                        text="{ path: 'Drdat', type: 'sap.ui.model.odata.type.Time'}" />
+                    <Text
+                        text="{Pic}" />
+                    <Text
+                        text="{Stats}" />
+                </cells>
+            </ColumnListItem>
+        </items>
+    </Table>
+        </content>
+    </Page>
+</mvc:View>

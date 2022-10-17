@@ -1,0 +1,36 @@
+<mvc:View controllerName="sync.c203.delivery.controller.delivery"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:f ="sap.f"
+    xmlns:form="sap.ui.layout.form">
+    <Page id="page" title="{i18n>title}">
+        <List
+		headerText="배송 목록"
+        items="{
+			path:'/deliverySet'
+		}">
+		<ObjectListItem
+				title="{Ornum}"
+				type="Active"
+				press="onListItemPress"
+				number="{ 
+					path: 'Total',
+					formatter: '.multipletotal'
+				} " 
+				numberUnit="KRW">
+			<firstStatus>
+				<ObjectStatus
+					text="Available"
+					state="Success" />
+			</firstStatus>
+			<ObjectAttribute text="주문일:{path: 'Ordat', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'yyyy/MM/dd', UTC: true }}" />
+			<ObjectAttribute text="배송예정일:{path: 'Drdat', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'yyyy/MM/dd', UTC: true }}" />
+			<markers>
+				<ObjectMarker type="Favorite" />
+				<ObjectMarker type="Flagged" />
+			</markers>
+		</ObjectListItem>
+        </List>
+        <content />
+    </Page>
+</mvc:View>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZGWC2SD03001H_SRV_01" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="SalesOrder" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Ornum"/>
+                </Key>
+                <Property Name="Ornum" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="ORDER NUMBER"/>
+                <Property Name="Ortype" Type="Edm.String" MaxLength="4" sap:unicode="false" sap:label="order type"/>
+                <Property Name="Vkorg" Type="Edm.String" MaxLength="6" sap:unicode="false" sap:label="ORG CODE"/>
+                <Property Name="Custna" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:label="CUSTOMER NAME"/>
+                <Property Name="Custno" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:label="CUSTOMER NUMBER"/>
+                <Property Name="Ordat" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="ORDER DATE"/>
+                <Property Name="Drdat" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Delivery Date"/>
+                <Property Name="Pic" Type="Edm.String" MaxLength="8" sap:unicode="false" sap:label="Person In Charge"/>
+                <Property Name="Stats" Type="Edm.String" MaxLength="4" sap:unicode="false" sap:label="STATUS"/>
+                <Property Name="Dflag" Type="Edm.Boolean" sap:unicode="false" sap:label="Delete FLaG"/>
+            </EntityType>
+            <EntityType Name="Attachment" m:HasStream="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Guid"/>
+                </Key>
+                <Property Name="Guid" Type="Edm.String" Nullable="false" MaxLength="32" sap:unicode="false" sap:label="Guid" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Id" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Id" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Filename" Type="Edm.String" Nullable="false" MaxLength="255" sap:unicode="false" sap:label="Filename" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Filesize" Type="Edm.String" Nullable="false" MaxLength="15" sap:unicode="false" sap:label="Filesize" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Mimetype" Type="Edm.String" Nullable="false" MaxLength="120" sap:unicode="false" sap:label="Mimetype" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Downurl" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Downurl" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityContainer Name="ZGWC2SD03001H_SRV_01_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="SalesOrderSet" EntityType="ZGWC2SD03001H_SRV_01.SalesOrder" sap:content-version="1"/>
+                <EntitySet Name="AttachmentSet" EntityType="ZGWC2SD03001H_SRV_01.Attachment" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+            </EntityContainer>
+            <atom:link rel="self" href="http://edu.bgis.co.kr:8001/sap/opu/odata/sap/ZGWC2SD03001H_SRV_01/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="http://edu.bgis.co.kr:8001/sap/opu/odata/sap/ZGWC2SD03001H_SRV_01/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
