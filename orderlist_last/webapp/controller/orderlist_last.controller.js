@@ -8,10 +8,10 @@ sap.ui.define([
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      */
-    function (Controller, JSONModel, MessageToast, Filter, FilterOperator) {
+     function (Controller, JSONModel, MessageToast, Filter, FilterOperator) {
         "use strict";
 
-        return Controller.extend("sdorderlist1.controller.orderlist", {
+        return Controller.extend("sync.c203.orderlistlast.controller.orderlist_last", {
             onInit: function () {
                 // 모델을 세팅한다.
                 this._setInitModel();
@@ -337,4 +337,5 @@ sap.ui.define([
             }
         });
     });
+
 

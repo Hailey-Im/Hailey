@@ -1,4 +1,4 @@
-<mvc:View controllerName="sdorderlist1.controller.orderlist"
+<mvc:View controllerName="sync.c203.orderlistlast.controller.orderlist_last"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns="sap.m" 	xmlns:f="sap.f"
     xmlns:fb="sap.ui.comp.filterbar"

@@ -1,7 +1,7 @@
 {
   "_version": "1.17.0",
   "sap.app": {
-    "id": "zc203_sdorderlist1",
+    "id": "sync.c203.orderlistlast",
     "type": "application",
     "i18n": "i18n/i18n.properties",
     "applicationVersion": {
@@ -13,7 +13,7 @@
     "sourceTemplate": {
       "id": "@sap/generator-fiori:basic",
       "version": "1.7.4",
-      "toolsId": "8adf7018-39ce-4af6-a0a0-b2a4e09f3d55"
+      "toolsId": "ae097bea-e9ab-4fff-8a69-d395a0ada8ef"
     },
     "dataSources": {
       "mainService": {
@@ -44,7 +44,7 @@
     }
   },
   "sap.ui5": {
-    "flexEnabled": false,
+    "flexEnabled": true,
     "dependencies": {
       "minUI5Version": "1.71.24",
       "libs": {
@@ -66,15 +66,13 @@
       "i18n": {
         "type": "sap.ui.model.resource.ResourceModel",
         "settings": {
-          "bundleName": "sdorderlist1.i18n.i18n"
+          "bundleName": "sync.c203.orderlistlast.i18n.i18n"
         }
       },
       "": {
         "dataSource": "mainService",
         "preload": true,
-        "settings": {
-          "useBatch": false
-        }
+        "settings": {}
       }
     },
     "resources": {
@@ -89,32 +87,32 @@
         "routerClass": "sap.m.routing.Router",
         "viewType": "XML",
         "async": true,
-        "viewPath": "sdorderlist1.view",
+        "viewPath": "sync.c203.orderlistlast.view",
         "controlAggregation": "pages",
         "controlId": "app",
         "clearControlAggregation": false
       },
       "routes": [
         {
-          "name": "Routeorderlist",
+          "name": "Routeorderlist_last",
           "pattern": ":?query:",
           "target": [
-            "Targetorderlist"
+            "Targetorderlist_last"
           ]
         }
       ],
       "targets": {
-        "Targetorderlist": {
+        "Targetorderlist_last": {
           "viewType": "XML",
           "transition": "slide",
           "clearControlAggregation": false,
-          "viewId": "orderlist",
-          "viewName": "orderlist"
+          "viewId": "orderlist_last",
+          "viewName": "orderlist_last"
         }
       }
     },
     "rootView": {
-      "viewName": "sdorderlist1.view.App",
+      "viewName": "sync.c203.orderlistlast.view.App",
       "type": "XML",
       "async": true,
       "id": "App"
