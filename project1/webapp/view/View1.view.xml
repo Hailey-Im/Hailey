@@ -1,0 +1,44 @@
+<!-- <mvc:View controllerName="project1.controller.View1" -->
+<mvc:View
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:m="sap.m"
+	xmlns="sap.suite.ui.commons"
+	controllerName="project1.controller.View1">
+	<m:Panel>
+		<m:Label text="Process Flow sample - zooming buttons and highlighted items" />
+		<m:HBox renderType="Bare">
+			<m:Button text="Zoom In" press="onZoomIn" />
+			<m:Button text="Zoom Out" press="onZoomOut" />
+			<m:Button text="Display Highlight Path" press="onHighlightPath" />
+			<m:Button text="Update Model" press="onUpdateModel" />
+		</m:HBox>
+		<ProcessFlow
+			id="processflow1"
+			scrollable="false"
+			foldedCorners="true"
+			nodePress="onNodePress"
+			nodes="{/nodes}"
+			lanes="{/lanes}">
+			<nodes>
+				<ProcessFlowNode
+					laneId="{lane}"
+					nodeId="{id}"
+					title="{title}"
+					titleAbbreviation="{titleAbbreviation}"
+					children="{children}"
+					state="{state}"
+					stateText="{stateText}"
+					texts="{texts}"
+					highlighted="{highlighted}"
+					focused="{focused}" />
+			</nodes>
+			<lanes>
+				<ProcessFlowLaneHeader
+					laneId="{id}"
+					iconSrc="{icon}"
+					text="{label}"
+					position="{position}" />
+			</lanes>
+		</ProcessFlow>
+	</m:Panel>
+</mvc:View>
